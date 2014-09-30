@@ -37,17 +37,19 @@ def main():
       raise RuntimeError("Invalid configuration file")
 
   # Start all applications
+  applications = []
   for section_name in config.sections():
     options = ProjectOptions(config, section_name)
 
     application = ApiReceiveApplication(options, section_name)
     application.listen(options.port)
-
+    applications.append(application)
   # start
   try:
     tornado.ioloop.IOLoop.instance().start()
   except KeyboardInterrupt:
-    application.clean_up()
+    for application in applications:
+      application.clean_up()
 
 if __name__ == "__main__":
   main()

@@ -44,12 +44,14 @@ def main():
     application = ApiReceiveApplication(options, section_name)
     application.listen(options.port)
     applications.append(application)
-  # start
-  try:
-    tornado.ioloop.IOLoop.instance().start()
-  except KeyboardInterrupt:
-    for application in applications:
-      application.clean_up()
+
+  if applications:
+    # start
+    try:
+      tornado.ioloop.IOLoop.instance().start()
+    except KeyboardInterrupt:
+      for application in applications:
+        application.clean_up()
 
 if __name__ == "__main__":
   main()

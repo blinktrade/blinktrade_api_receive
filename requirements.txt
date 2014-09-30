@@ -1,0 +1,5 @@
+python-bitcoinrpc
+tornado
+appdirs
+pyblinktrade
+sqlalchemy

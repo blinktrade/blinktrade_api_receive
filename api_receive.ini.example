@@ -1,0 +1,10 @@
+[testnet]
+db_engine = sqlite:////Users/rodrigo/blinktrade/bitex/db/api_receive.development.sqlite
+db_echo=False
+log = /Users/rodrigo/blinktrade/bitex/logs/api_receive.log
+port = 9943
+rpchost=localhost
+rpcport=18332
+rpcuser =
+rpcpassword =
+rpc_url = http://%(rpcuser)s:%(rpcpassword)s@%(rpchost)s:%(rpcport)s

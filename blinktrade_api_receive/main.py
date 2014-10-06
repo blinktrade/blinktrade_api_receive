@@ -10,7 +10,7 @@ import tornado
 from api_receive_application import ApiReceiveApplication
 
 def main():
-  parser = argparse.ArgumentParser(description="Blinktrade Mailer application")
+  parser = argparse.ArgumentParser(description="Blinktrade Api Receive application")
   parser.add_argument('-c', "--config",
                       action="store",
                       dest="config",
